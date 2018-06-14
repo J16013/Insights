@@ -22,7 +22,7 @@ public class MySQL {
 	    this.dbname = "sangi2018";
 	    this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
 	    this.user = "sangi2018";
-	    this.password = "sistsangi2018";
+	    this.password = "J16013";
         this.id="J16013";
 
         try {

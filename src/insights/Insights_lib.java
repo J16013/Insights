@@ -19,7 +19,7 @@ public class Insights_lib {
 
 	public Insights_lib() {
 		service = new PersonalityInsights("2016-10-19");
-		service.setUsernameAndPassword("88a48ecb-09c8-4df7-adbd-430c48364532", "5stD20q0pB18");
+		service.setUsernameAndPassword("J16013", "J16013");
 	}
 
 	public void getProfile(String text) {
