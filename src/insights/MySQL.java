@@ -19,11 +19,11 @@ public class MySQL {
 	public MySQL() {
 		this.driver = "org.gjt.mm.mysql.Driver";
 	    this.server = "sangi2018.sist.ac.jp";
-	    this.dbname = "sangi2018";
+	    this.dbname = "j16013";
 	    this.url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=UTF-8";
-	    this.user = "sangi2018";
-	    this.password = "J16013";
-        this.id="J16013";
+	    this.user = "j16013";
+	    this.password = "sistj16013";
+        //this.id="J16013";
 
         try {
             this.con = DriverManager.getConnection(url, user, password);
@@ -44,7 +44,7 @@ public class MySQL {
 
 		text=text.replace("'", "''");
 		StringBuffer buf = new StringBuffer();
-		buf.append("INSERT INTO  `screens` (`user_id`,"
+		buf.append("INSERT INTO  `screens` ("
 				+ "`openness` ,`conscientiousness`,extraversion,agreeableness,neuroticism,"
 				+ "adventurousness,artistic,emotionality,imagination,intellect,challenging,"
 				+ "striving,cautiousness,dutifulness,orderliness,discipline,efficacy,"
@@ -53,17 +53,17 @@ public class MySQL {
 				+ "fiery,worry,melancholy,immoderation,consciousness,susceptible"
 				+ ",text)"
 				+ " VALUES "
-				+ "('"+id+"'");
+				+ "(");
 		for(double d : Personality){
-			buf.append(","+d);
+			buf.append(d+",");
 		}
 		for(List<Double> list : Attribute){
 			for(double d : list){
-				buf.append(","+d);
+				buf.append(d+",");
 			}
 		}
 
-		buf.append(",'"+text+"' );");
+		buf.append("'"+text+"' );");
 		String sql = buf.toString();
 		System.out.println(sql);
 		System.out.println();
